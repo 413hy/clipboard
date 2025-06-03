@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClipLink - 智能剪贴板</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body class="bg-gray-100 font-sans">
+  <div class="flex h-screen">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white shadow-md p-4 flex flex-col">
+      <div class="flex items-center space-x-2 text-blue-600 text-xl font-bold mb-8">
+        <i data-feather="clipboard"></i>
+        <span>ClipLink</span>
+      </div>
+      <nav class="flex-1 space-y-2">
+        <button class="flex items-center space-x-2 text-gray-700 hover:text-blue-600">
+          <i data-feather="layers"></i><span>剪贴板</span>
+        </button>
+        <button class="flex items-center space-x-2 text-gray-700 hover:text-blue-600">
+          <i data-feather="star"></i><span>收藏夹</span>
+        </button>
+        <button class="flex items-center space-x-2 text-gray-700 hover:text-blue-600">
+          <i data-feather="clock"></i><span>历史</span>
+        </button>
+        <button class="flex items-center space-x-2 text-gray-700 hover:text-blue-600 mt-auto">
+          <i data-feather="settings"></i><span>设置</span>
+        </button>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 overflow-y-auto">
+      <div class="flex justify-between items-center mb-6">
+        <h1 class="text-2xl font-semibold">当前剪贴板</h1>
+        <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">读取剪贴板</button>
+      </div>
+
+      <div class="bg-white p-4 rounded shadow mb-4">
+        <input class="w-full border-b p-2 text-lg outline-none" placeholder="输入标题...">
+        <textarea class="w-full mt-2 p-2 border rounded resize-none h-32 outline-none" placeholder="输入内容..."></textarea>
+        <div class="flex justify-end mt-2">
+          <button class="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600">保存</button>
+        </div>
+      </div>
+
+      <div class="flex items-center mb-4 space-x-2">
+        <input class="flex-1 px-3 py-2 rounded border" placeholder="搜索剪贴板内容或标题...">
+        <div class="space-x-1">
+          <button class="px-3 py-1 bg-blue-600 text-white rounded">全部</button>
+          <button class="px-3 py-1 bg-gray-200 hover:bg-gray-300 rounded">文本</button>
+          <button class="px-3 py-1 bg-gray-200 hover:bg-gray-300 rounded">链接</button>
+          <button class="px-3 py-1 bg-gray-200 hover:bg-gray-300 rounded">代码</button>
+          <button class="px-3 py-1 bg-gray-200 hover:bg-gray-300 rounded">密码</button>
+        </div>
+      </div>
+
+      <div class="text-center text-gray-500 mt-20">
+        <i data-feather="clipboard" class="w-12 h-12 mx-auto"></i>
+        <p class="mt-2">暂无剪贴板历史</p>
+        <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">+ 添加新内容</button>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    feather.replace();
+  </script>
+</body>
+
+</html>
